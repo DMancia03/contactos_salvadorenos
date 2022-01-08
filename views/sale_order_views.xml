@@ -9,13 +9,7 @@
 
             <!-- Espacio para la sucursal debajo del campo "contacto" -->
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="sucursal_id" >
-                    <tree editable="bottom">
-                        <field name="name" />
-                        <field name="short_name" />
-                        <field name="company_id" />
-                    </tree>
-                </field>
+                <field name="sucursal_id" />
             </xpath>
             
         </field>

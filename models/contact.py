@@ -17,7 +17,7 @@ class ContactSalvadorenoExtend(models.Model):
     dui = fields.Char(string='DUI', size=9, required=True) # Dui
     nit = fields.Char(string='NIT', size=17, required=False) # Nit
     nrc = fields.Char(string='NRC', required=False) # Nrc
-    # Para filtrar las sucursales ocupe un domain
+    # Para filtrar las sucursales se uso un domain
     sucursal_id = fields.Many2one('contact.sucursal', string='Sucursal', domain="[('company_id','=',company_id)]", required=True)
 
     # Al principio habia usado un onchange con un domain, que no me funciono

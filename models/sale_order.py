@@ -18,13 +18,11 @@ class SaleOrderExtend(models.Model):
     # Onchange para hacer la asignacion automatica de sucursal
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
-        sucursales = []
         self.sucursal_id = [(5,0,0)]
 
         if self.partner_id:
             for i in self.partner_id.sucursal_id:
                 # Se valida por si el cliente no tiene sucursal asignada
-                if i:
-                    self.sucursal_id = i
-            #_logger = logging.getLogger(sucursal)
+                self.sucursal_id = i
+                #_logger = logging.getLogger(i)
             
