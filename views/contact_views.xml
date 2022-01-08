@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="res_partner_view_form_inherit" model="ir.ui.view">
+    <field name="name">res.partner.view.form.inherit</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+
+      <!-- Espacio para los campos de contacto salvadoreño -->
+      <xpath expr="//field[@name='vat']" position="after">
+        <field name="dui" placeholder="Implementación de ventas" />
+        <field name="nit" placeholder="1234-123456-123-1" />
+        <field name="nrc" attrs="{'invisible': [ ('is_company', '=', False) ]}" />
+      </xpath>
+
+      <!-- Espacio para el campo de sucursale -->
+      <xpath expr="//field[@name='property_account_position_id']" position="after">
+        <field name="sucursal_id"  >
+          <tree editable="bottom">
+            <field name="name" />
+            <field name="short_name" />
+            <field name="company_id" />
+          </tree>
+        </field>
+      </xpath>
+
+    </field>
+  </record>
+
+</odoo>

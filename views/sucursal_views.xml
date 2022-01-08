@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Form -->
+  <record id="contact_sucursal_view_form" model="ir.ui.view">
+    <field name="name">contact.sucursal.view.form</field>
+    <field name="model">contact.sucursal</field>
+    <field name="arch" type="xml">
+      <form string="Sucursales">
+        <sheet>
+          <group>
+            <group>
+              <field name="name" />
+              <field name="short_name" />
+            </group>
+
+            <group>
+              <field name="company_id" />
+            </group>
+          </group>
+          
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Tree -->
+  <record id="contact_sucursal_tree" model="ir.ui.view">
+    <field name="name">contact.sucursal.tree</field>
+    <field name="model">contact.sucursal</field>
+    <field name="arch" type="xml">
+    <tree string="Sucursales">
+      <field name="short_name" />
+      <field name="company_id" />
+    </tree>
+    </field>
+  </record>
+
+  <!-- Action -->
+  <record id="action_contact_sucursal" model="ir.actions.act_window">
+    <field name="name">Sucursales</field>
+    <field name="view_mode">tree,form</field>
+    <field name="res_model">contact.sucursal</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Por favor, crear una sucursal para una compañía existente</p>
+    </field>
+  </record>
+
+  <!-- Menu -->
+  <!-- Se agrego al menu en Ajustes > Usuarios y compañias -->
+  <menuitem
+    id="contact_sucursal_menu_item"
+    action="action_contact_sucursal"
+    parent="base.menu_users"
+    sequence="10"/>
+
+</odoo>

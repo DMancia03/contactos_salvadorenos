@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contact_sucursal,contact_salvadoreno.contact_sucursal,model_contact_sucursal,base.group_user,1,1,1,1
