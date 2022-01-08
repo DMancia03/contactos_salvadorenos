@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+  <!-- Vista del modelo sucursal -->
 
   <!-- Form -->
   <record id="contact_sucursal_view_form" model="ir.ui.view">

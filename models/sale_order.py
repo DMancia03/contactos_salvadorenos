@@ -15,8 +15,7 @@ class SaleOrderExtend(models.Model):
 
     sucursal_id = fields.Many2one('contact.sucursal', string='Sucursal') # Sucursal del contacto
 
-    # Onchange para hacer la asignacion automatica
-    # Cuando no tiene sucursal
+    # Onchange para hacer la asignacion automatica de sucursal
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         sucursales = []
@@ -24,6 +23,7 @@ class SaleOrderExtend(models.Model):
 
         if self.partner_id:
             for i in self.partner_id.sucursal_id:
+                # Se valida por si el cliente no tiene sucursal asignada
                 if i:
                     self.sucursal_id = i
             #_logger = logging.getLogger(sucursal)

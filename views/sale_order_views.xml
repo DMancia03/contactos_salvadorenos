@@ -6,7 +6,8 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <!-- Espacio para la sucursal debajo del campo contacto -->
+
+            <!-- Espacio para la sucursal debajo del campo "contacto" -->
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="sucursal_id" >
                     <tree editable="bottom">
@@ -16,6 +17,7 @@
                     </tree>
                 </field>
             </xpath>
+            
         </field>
     </record>
 

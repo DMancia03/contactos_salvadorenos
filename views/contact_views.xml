@@ -7,14 +7,14 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
 
-      <!-- Espacio para los campos de contacto salvadoreño -->
+      <!-- Espacio para los campos de contacto salvadoreño debajo de "VAT" -->
       <xpath expr="//field[@name='vat']" position="after">
         <field name="dui" placeholder="Implementación de ventas" />
         <field name="nit" placeholder="1234-123456-123-1" />
         <field name="nrc" attrs="{'invisible': [ ('is_company', '=', False) ]}" />
       </xpath>
 
-      <!-- Espacio para el campo de sucursale -->
+      <!-- Espacio para el campo de sucursal debajo de "Posicion fiscal" -->
       <xpath expr="//field[@name='property_account_position_id']" position="after">
         <field name="sucursal_id"  >
           <tree editable="bottom">
